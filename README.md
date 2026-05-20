@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+﻿# DebugLog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite demo project that features a small debug logging UI component and playground.
 
-Currently, two official plugins are available:
+It includes a `DebugProvider`, debug panel, and helper hooks to log structured events in the browser. The sample app demonstrates how to open a debug panel by tapping a logo 5 times or using a keyboard shortcut, then log different event types like `INFO`, `API`, `ERROR`, `NAV`, and `ACTION`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Table of Contents
 
-## React Compiler
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Typical README Format](#typical-readme-format)
+- [License](#license)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+This repository is built with Vite, React, and TypeScript. It is intended as a small debugging utility playground where developers can experiment with logging and inspect debug events inside a React application.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The project also serves as a working example of:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- TypeScript-based React components
+- Vite development workflow
+- Custom React context and hooks
+- Basic component library export structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `DebugProvider` context wrapper
+- `useDebug` hook for logging events
+- `DebugScreen` component for rendering the debug panel
+- `useDebugLogoTap` hook to open the panel by tapping a logo multiple times
+- Example buttons for logging events with typed payloads
+
+## Getting Started
+
+### Requirements
+
+- Node.js 20+ recommended
+- npm or yarn
+
+### Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open the app in your browser at the URL shown by Vite, typically `http://localhost:5173`.
+
+## Usage
+
+1. Start the dev server with `npm run dev`.
+2. Open the playground page in your browser.
+3. Tap the logo area five times quickly or press `Ctrl+Shift+D` to open/close the debug panel.
+4. Use the sample buttons to log events of different types.
+
+This repository is structured both as a runnable playground and as a small reusable debug utility package.
+
+## Available Scripts
+
+- `npm run dev` - Start the Vite development server.
+- `npm run build` - Build the application and type definitions.
+- `npm run preview` - Preview the production build locally.
+- `npm run lint` - Run ESLint across the project.
+
+## Project Structure
+
+- `src/` - Source code
+  - `debug/` - Debugging UI, hooks, context, and type definitions
+  - `playground/` - Example app demonstrating the debug utilities
+- `public/` - Static assets
+- `tsconfig.json` - TypeScript configuration
+- `vite.config.ts` - Vite configuration
+- `package.json` - Project metadata and scripts
+
+## Typical README Format
+
+A good README usually includes the following sections:
+
+1. **Title** - The project name.
+2. **Description** - What the project does and why it exists.
+3. **Table of Contents** - Optional, useful for longer READMEs.
+4. **Installation** - How to install dependencies.
+5. **Usage** - How to run and use the project.
+6. **Features** - A short list of key capabilities.
+7. **Project Structure** - Important files and folders.
+8. **Scripts** - Commands available for development and build.
+9. **Contributing** - How to contribute, if applicable.
+10. **License** - Licensing information.
+
+## License
+
+MIT
