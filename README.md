@@ -81,21 +81,6 @@ This repository is structured both as a runnable playground and as a small reusa
 - `vite.config.ts` - Vite configuration
 - `package.json` - Project metadata and scripts
 
-## Typical README Format
-
-A good README usually includes the following sections:
-
-1. **Title** - The project name.
-2. **Description** - What the project does and why it exists.
-3. **Table of Contents** - Optional, useful for longer READMEs.
-4. **Installation** - How to install dependencies.
-5. **Usage** - How to run and use the project.
-6. **Features** - A short list of key capabilities.
-7. **Project Structure** - Important files and folders.
-8. **Scripts** - Commands available for development and build.
-9. **Contributing** - How to contribute, if applicable.
-10. **License** - Licensing information.
-
 ## License
 
 MIT
